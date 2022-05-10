@@ -1,0 +1,30 @@
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: white;
+  height: max-content;
+  margin-bottom: 35px;
+}
+.checkout__ad {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.checkout__title {
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+.user__name {
+  text-transform: capitalize;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-left: 10px;
+  font-size: large;
+}
+@media screen and (max-width: 675px) {
+  .checkout {
+    display: flex;
+    flex-direction: column;
+  }
+}
