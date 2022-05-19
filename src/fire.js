@@ -46,5 +46,5 @@ export function useAuth() {
 
 // const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const db = app.Firestore();
+const db = app.Firestore;
 export { db };
