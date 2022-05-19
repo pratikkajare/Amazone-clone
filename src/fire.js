@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
-// import { firebase } from "@firebase/app";
+
 import { useEffect, useState } from "react";
-import firebase from "firebase/compat/app";
+import { Firestore } from "@google-cloud/firestore";
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -9,7 +10,7 @@ import {
   signOut,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import "@firebase/firestore";
+// import "@firebase/firestore";  before
 
 const firebaseConfig = {
   apiKey: "AIzaSyBTyeCrbqNRQl-jI6PjUYpxLOe0JLiEsPw",
@@ -45,5 +46,5 @@ export function useAuth() {
 
 // const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const db = app.firestore;
+const db = app.Firestore();
 export { db };

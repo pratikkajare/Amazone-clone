@@ -47,6 +47,8 @@ const Payment = () => {
       })
       .then(({ paymentIntent }) => {
         //paymentIntent=payment confirmation
+        alert("Payment Successfull");
+
         db.collection("users")
           .doc(user.uid)
           .collection("orders")
@@ -111,24 +113,32 @@ const Payment = () => {
             <h3>Payment Method</h3>
           </div>
           <div className="payment__details">
-            <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}> */}
+            <form method="post">
               <div className="payment__priceContainer">
                 <CurrencyFormat
-                  renderText={(value) => <h3>Total Order: {value}</h3>}
+                  renderText={(value) => (
+                    <div>
+                      {" "}
+                      <h4 style={{ color: "red" }}>Total Order</h4>{" "}
+                      <h4> {value}</h4>
+                    </div>
+                  )}
                   decimalScale={2}
                   value={getBasketTotal(basket)}
                   displayType={"text"}
                   thousandSeparator={true}
                   prefix={"\u20A8"}
                 />
-                <div>
+                <div className="payment__card">
                   <p>card details</p>
-                  <CardElement />
+                  <CardElement onChange={handleChange} />
                 </div>
 
-                {/* <CardElement onChange={handleChange} /> */}
-
-                <button disabled={processing || disabled || succeeded}>
+                <button
+                  disabled={processing || disabled || succeeded}
+                  onClick={handleSubmit}
+                >
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>

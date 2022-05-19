@@ -41,9 +41,8 @@ function App() {
       <div className="App">
         <Header />
 
-        {/* <InjectCheckout /> */}
         <Routes>
-          <Route path="/" exact={true} element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login />} />
           <Route
