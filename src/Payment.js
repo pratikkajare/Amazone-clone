@@ -38,6 +38,10 @@ const Payment = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProccessing(true);
+    if (!stripe || !elements) {
+      alert("felll");
+      return;
+    }
 
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
@@ -68,8 +72,8 @@ const Payment = () => {
         });
 
         history("/orders", { replace: true });
+        return;
       });
-    return payload;
   };
   const handleChange = (event) => {
     setDisabled(event.empty);
@@ -114,7 +118,7 @@ const Payment = () => {
           </div>
           <div className="payment__details">
             {/* <form onSubmit={handleSubmit}> */}
-            <form method="post">
+            <form onSubmit={handleSubmit}>
               <div className="payment__priceContainer">
                 <CurrencyFormat
                   renderText={(value) => (
@@ -134,11 +138,8 @@ const Payment = () => {
                   <p>card details</p>
                   <CardElement onChange={handleChange} />
                 </div>
-
-                <button
-                  disabled={processing || disabled || succeeded}
-                  onClick={handleSubmit}
-                >
+                {/* disabled={processing || disabled || succeeded} */}
+                <button>
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>
