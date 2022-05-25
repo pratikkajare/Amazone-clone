@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Amazone-clone/precache-manifest.19b3ed660f1eff4a5816edda218f9103.js"
+  "/Amazone-clone/precache-manifest.74b11dce84b785875988e28e9f2b0aa2.js"
 );
 
 workbox.clientsClaim();
