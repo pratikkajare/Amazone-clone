@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "09cff881711f408042d5",
+    "revision": "480f27153bc27b0f433c",
     "url": "/Amazone-clone/static/css/main.d2d49a61.chunk.css"
   },
   {
-    "revision": "09cff881711f408042d5",
-    "url": "/Amazone-clone/static/js/main.09cff881.chunk.js"
+    "revision": "480f27153bc27b0f433c",
+    "url": "/Amazone-clone/static/js/main.480f2715.chunk.js"
   },
   {
     "revision": "c589853b1b38597cde06",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/Amazone-clone/static/js/runtime~main.32a60f80.js"
   },
   {
-    "revision": "c6c05043a15d99f3ca4a98fac4309058",
+    "revision": "77b8349df8c586277c6118d38af91f05",
     "url": "/Amazone-clone/index.html"
   }
 ];
