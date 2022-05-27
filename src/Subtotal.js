@@ -29,7 +29,7 @@ const Subtotal = () => {
         prefix={"\u20A8"}
       />
       <button
-        onClick={(e) => history("/payment")}
+        onClick={(e) => history("/address")}
         disabled={basket.length === 0}
         style={{ cursor: basket.length === 0 ? "default" : "pointer" }}
       >

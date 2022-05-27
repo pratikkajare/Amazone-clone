@@ -1,7 +1,7 @@
 {
   "main.css": "/Amazone-clone/static/css/main.d2d49a61.chunk.css",
-  "main.js": "/Amazone-clone/static/js/main.08ac0b7e.chunk.js",
-  "main.js.map": "/Amazone-clone/static/js/main.08ac0b7e.chunk.js.map",
+  "main.js": "/Amazone-clone/static/js/main.855f435e.chunk.js",
+  "main.js.map": "/Amazone-clone/static/js/main.855f435e.chunk.js.map",
   "static/js/1.c589853b.chunk.js": "/Amazone-clone/static/js/1.c589853b.chunk.js",
   "static/js/1.c589853b.chunk.js.map": "/Amazone-clone/static/js/1.c589853b.chunk.js.map",
   "static/js/2.1068e1cc.chunk.js": "/Amazone-clone/static/js/2.1068e1cc.chunk.js",
@@ -10,6 +10,6 @@
   "runtime~main.js.map": "/Amazone-clone/static/js/runtime~main.32a60f80.js.map",
   "static/css/main.d2d49a61.chunk.css.map": "/Amazone-clone/static/css/main.d2d49a61.chunk.css.map",
   "index.html": "/Amazone-clone/index.html",
-  "precache-manifest.19b3ed660f1eff4a5816edda218f9103.js": "/Amazone-clone/precache-manifest.19b3ed660f1eff4a5816edda218f9103.js",
+  "precache-manifest.264bff8441c765073ebf7d4a3cc24091.js": "/Amazone-clone/precache-manifest.264bff8441c765073ebf7d4a3cc24091.js",
   "service-worker.js": "/Amazone-clone/service-worker.js"
 }

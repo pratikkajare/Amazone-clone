@@ -1,6 +1,7 @@
 export const initialState = {
   basket: [],
-  user: null,
+  user: JSON.parse(localStorage.getItem("user")),
+  address: {},
 };
 
 export const getBasketTotal = (basket) =>
@@ -34,6 +35,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         basket: newBasket,
+      };
+
+    case "SET_ADDRESS":
+      return {
+        ...state,
+        address: { ...action.item },
       };
 
     case "SET_USER":

@@ -9,10 +9,11 @@ import Login from "./Login";
 import { auth } from "./fire";
 import { useStateValue } from "./StateProvider";
 import Payment from "./Payment";
-import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import Order from "./Order";
 import Orders from "./Orders";
+import Address from "./Address";
 // import InjectCheckout from "./InjectCheckout";
 
 const promise = loadStripe(
@@ -43,6 +44,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Amazone-clone" element={<Home />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login />} />
           <Route
@@ -53,9 +55,9 @@ function App() {
               </Elements>
             }
           />
-
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/order" element={<Order />} />
+          <Route exact path="/address" element={<Address />} />
+          <Route exact path="/orders" element={<Orders />} />
+          <Route exact path="/order" element={<Order />} />
         </Routes>
 
         <Footer />
