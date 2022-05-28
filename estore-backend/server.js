@@ -4,13 +4,14 @@ const mongoose = require("mongoose");
 // const bcrypt = require("bcryptjs");
 // const Products = require("./Products");
 // const Users = require("./Users");
-const Orders = require("./Orders");
+// const Orders = require("./Orders");
 const stripe = require("stripe")(
   "sk_test_51KvMuZSE2Bi1ByoVtItD5HcXltZXso8MUYK0JNm7Ek4YNqZLdLs6dQJbxpfkxmDn2LOn3pMwnqdp5aiAROaGKOcO00rStnX7oh"
 );
 
 const app = express();
-const port = 3000;
+const port = 8000;
+// const port = process.env.PORT || 8000;
 
 // Middlewares
 app.use(express.json());
@@ -19,7 +20,7 @@ app.use(cors());
 // connection url
 
 const connection_url =
-  "mongodb+srv://pratik_:2813pratik@cluster0.q5hpj5f.mongodb.net/Cluster0?retryWrites=true&w=majority";
+  "mongodb+srv://Pdpatel267:admin@cluster0.wiq7i.mongodb.net/Cluster0?retryWrites=true&w=majority";
 
 mongoose.connect(connection_url, {
   useNewUrlParser: true,

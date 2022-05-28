@@ -40,7 +40,7 @@ function Product({ id, title, image, price, rating }) {
       </div>
 
       <button onClick={addToBasket} className="fbutton">
-        Add to Basket
+        Add to Cart
       </button>
     </div>
   );
