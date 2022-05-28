@@ -1,15 +1,15 @@
 {
-  "main.css": "/Amazone-clone/static/css/main.05227ede.chunk.css",
-  "main.js": "/Amazone-clone/static/js/main.5b092aac.chunk.js",
-  "main.js.map": "/Amazone-clone/static/js/main.5b092aac.chunk.js.map",
-  "static/js/1.d1a26ed7.chunk.js": "/Amazone-clone/static/js/1.d1a26ed7.chunk.js",
-  "static/js/1.d1a26ed7.chunk.js.map": "/Amazone-clone/static/js/1.d1a26ed7.chunk.js.map",
-  "static/js/2.d5b6da26.chunk.js": "/Amazone-clone/static/js/2.d5b6da26.chunk.js",
-  "static/js/2.d5b6da26.chunk.js.map": "/Amazone-clone/static/js/2.d5b6da26.chunk.js.map",
-  "runtime~main.js": "/Amazone-clone/static/js/runtime~main.1ce4b42f.js",
-  "runtime~main.js.map": "/Amazone-clone/static/js/runtime~main.1ce4b42f.js.map",
-  "static/css/main.05227ede.chunk.css.map": "/Amazone-clone/static/css/main.05227ede.chunk.css.map",
+  "main.css": "/Amazone-clone/static/css/main.bca0685d.chunk.css",
+  "main.js": "/Amazone-clone/static/js/main.a529861e.chunk.js",
+  "main.js.map": "/Amazone-clone/static/js/main.a529861e.chunk.js.map",
+  "runtime~main.js": "/Amazone-clone/static/js/runtime~main.7310aee7.js",
+  "runtime~main.js.map": "/Amazone-clone/static/js/runtime~main.7310aee7.js.map",
+  "static/js/2.4ddd1fea.chunk.js": "/Amazone-clone/static/js/2.4ddd1fea.chunk.js",
+  "static/js/2.4ddd1fea.chunk.js.map": "/Amazone-clone/static/js/2.4ddd1fea.chunk.js.map",
+  "static/js/3.d4eafd3d.chunk.js": "/Amazone-clone/static/js/3.d4eafd3d.chunk.js",
+  "static/js/3.d4eafd3d.chunk.js.map": "/Amazone-clone/static/js/3.d4eafd3d.chunk.js.map",
   "index.html": "/Amazone-clone/index.html",
-  "precache-manifest.200104efe4ccf349af4c4c1dc03dada5.js": "/Amazone-clone/precache-manifest.200104efe4ccf349af4c4c1dc03dada5.js",
-  "service-worker.js": "/Amazone-clone/service-worker.js"
+  "precache-manifest.45f2a3df78b5f0c9f032c9353f1d9fff.js": "/Amazone-clone/precache-manifest.45f2a3df78b5f0c9f032c9353f1d9fff.js",
+  "service-worker.js": "/Amazone-clone/service-worker.js",
+  "static/css/main.bca0685d.chunk.css.map": "/Amazone-clone/static/css/main.bca0685d.chunk.css.map"
 }
