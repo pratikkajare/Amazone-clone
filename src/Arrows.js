@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Arrows.css";
 function Arrows({ prevSlide, nextSlide }) {
   return (
     <div className="arrows">

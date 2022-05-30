@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useStateValue } from "./StateProvider";
-
+import Header from "./Header";
 function Address() {
   const [{}, dispatch] = useStateValue();
   const [fullName, setFullName] = useState("");
@@ -34,71 +34,74 @@ function Address() {
   };
 
   return (
-    <Container>
-      <Main>
-        <FormContainer>
-          <InputContainer>
-            <p>Full Name</p>
-            <input
-              onChange={(e) => setFullName(e.target.value)}
-              type="text"
-              placeholder="Pratik Kajare"
-              value={fullName}
-            />
-          </InputContainer>
-          <InputContainer>
-            <p>Phone Number</p>
-            <input
-              type="text"
-              onChange={(e) => setPhone(e.target.value)}
-              value={phone}
-            />
-          </InputContainer>
-          <InputContainer>
-            <p>Flat, House no. Building, Company</p>
-            <input
-              type="text"
-              onChange={(e) => setFlat(e.target.value)}
-              value={flat}
-            />
-          </InputContainer>
-          <InputContainer>
-            <p>Area, Colony, Street</p>
-            <input
-              type="text"
-              onChange={(e) => setArea(e.target.value)}
-              value={area}
-            />
-          </InputContainer>
-          <InputContainer>
-            <p>Landmark</p>
-            <input
-              type="text"
-              onChange={(e) => setLandmark(e.target.value)}
-              value={landmark}
-            />
-          </InputContainer>
-          <InputContainer>
-            <p>Town/City</p>
-            <input
-              type="text"
-              onChange={(e) => setCity(e.target.value)}
-              value={city}
-            />
-          </InputContainer>
-          <InputContainer>
-            <p>State/Province</p>
-            <input
-              type="text"
-              onChange={(e) => setState(e.target.value)}
-              value={state}
-            />
-          </InputContainer>
+    <>
+      <Header />
+      <Container>
+        <Main>
+          <FormContainer>
+            <InputContainer>
+              <p>Full Name</p>
+              <input
+                onChange={(e) => setFullName(e.target.value)}
+                type="text"
+                placeholder="Pratik Kajare"
+                value={fullName}
+              />
+            </InputContainer>
+            <InputContainer>
+              <p>Phone Number</p>
+              <input
+                type="text"
+                onChange={(e) => setPhone(e.target.value)}
+                value={phone}
+              />
+            </InputContainer>
+            <InputContainer>
+              <p>Flat, House no. Building, Company</p>
+              <input
+                type="text"
+                onChange={(e) => setFlat(e.target.value)}
+                value={flat}
+              />
+            </InputContainer>
+            <InputContainer>
+              <p>Area, Colony, Street</p>
+              <input
+                type="text"
+                onChange={(e) => setArea(e.target.value)}
+                value={area}
+              />
+            </InputContainer>
+            <InputContainer>
+              <p>Landmark</p>
+              <input
+                type="text"
+                onChange={(e) => setLandmark(e.target.value)}
+                value={landmark}
+              />
+            </InputContainer>
+            <InputContainer>
+              <p>Town/City</p>
+              <input
+                type="text"
+                onChange={(e) => setCity(e.target.value)}
+                value={city}
+              />
+            </InputContainer>
+            <InputContainer>
+              <p>State/Province</p>
+              <input
+                type="text"
+                onChange={(e) => setState(e.target.value)}
+                value={state}
+              />
+            </InputContainer>
 
-          <button onClick={deliver}>Deliver to this Address</button>
-        </FormContainer>
-      </Main>
-    </Container>
+            <button onClick={deliver}>Deliver to this Address</button>
+          </FormContainer>
+        </Main>
+      </Container>
+    </>
   );
 }
 

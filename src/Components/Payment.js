@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import CurrencyFormat from "react-currency-format";
 import styled from "styled-components";
+import Header from "../Header";
 import { getBasketTotal } from "../reducer";
 import { useStateValue } from "../StateProvider";
-import Address from "../Address";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useAuth } from "../fire";
 import axios from "../axios";
@@ -42,101 +42,106 @@ function Payment() {
       })
 
       .then((result) => {
-        alert("Payment Successfull");
         axios.post("/orders/add", {
           basket: basket,
           price: getBasketTotal(basket),
           email: user.email,
           address: address,
         });
+        alert("Order Received");
 
         dispatch({
           type: "EMPTY_BASKET",
         });
-        navigate("/");
+        navigate("/orders");
       })
       .catch((err) => console.warn(err));
   };
 
   return (
-    <Container>
-      <Main>
-        <ReviewContainer>
-          <h2>Review Your Order</h2>
+    <>
+      <Header />
 
-          <AddressContainer>
-            <h5>Shipping Address</h5>
+      <Container>
+        <Main>
+          <ReviewContainer>
+            <h2>Review Your Order</h2>
 
-            <div>
-              <p>{address.fullName}</p>
-              <p>{address.flat}</p>
-              <p>{address.area}</p>
-              <p>{address.landmark}</p>
-              <p>
-                {address.city} {address.state}
-              </p>
+            <AddressContainer>
+              <h5>Shipping Address</h5>
 
-              <p>Phone: {address.phone}</p>
-            </div>
-          </AddressContainer>
-
-          <PaymentContainer>
-            <h5>Payment Method</h5>
-
-            <div>
-              <p>Card Details</p>
-
-              {/* Card Element */}
-
-              <CardElement />
-            </div>
-          </PaymentContainer>
-
-          <OrderContainer>
-            <h5>Your Order</h5>
-
-            <div>
-              {basket.map((product) => (
-                <Product>
-                  <Image>
-                    <img src={product.image} alt="" />
-                  </Image>
-                  <Description>
-                    <h4>{product.title}</h4>
-
-                    <p>₹ {product.price}</p>
-                  </Description>
-                </Product>
-              ))}
-            </div>
-          </OrderContainer>
-        </ReviewContainer>
-        <Subtotal>
-          <CurrencyFormat
-            renderText={(value) => (
-              <>
+              <div>
+                <p>{address.fullName}</p>
+                <p>{address.flat}</p>
+                <p>{address.area}</p>
+                <p>{address.landmark}</p>
                 <p>
-                  Subtotal ( {basket.length} items ) : <strong> {value}</strong>
+                  {address.city} {address.state}
                 </p>
-              </>
-            )}
-            decimalScale={2}
-            value={getBasketTotal(basket)}
-            displayType="text"
-            thousandSeparator={true}
-            prefix={"₹"}
-          />
 
-          <button
-            onClick={confirmPayment}
-            disabled={!currentUser}
-            style={{ cursor: !currentUser ? "default" : "pointer" }}
-          >
-            {currentUser ? "Place Order" : "SignIn_Required"}
-          </button>
-        </Subtotal>
-      </Main>
-    </Container>
+                <p>Phone: {address.phone}</p>
+              </div>
+            </AddressContainer>
+
+            <PaymentContainer>
+              <h5>Payment Method</h5>
+
+              <div>
+                <p>Card Details</p>
+
+                {/* Card Element */}
+
+                <CardElement />
+              </div>
+            </PaymentContainer>
+
+            <OrderContainer>
+              <h5>Your Order</h5>
+
+              <div>
+                {basket.map((product) => (
+                  <Product>
+                    <Image>
+                      <img src={product.image} alt="" />
+                    </Image>
+                    <Description>
+                      <h4>{product.title}</h4>
+
+                      <p>₹ {product.price}</p>
+                    </Description>
+                  </Product>
+                ))}
+              </div>
+            </OrderContainer>
+          </ReviewContainer>
+          <Subtotal>
+            <CurrencyFormat
+              renderText={(value) => (
+                <>
+                  <p>
+                    Subtotal ( {basket.length} items ) :{" "}
+                    <strong> {value}</strong>
+                  </p>
+                </>
+              )}
+              decimalScale={2}
+              value={getBasketTotal(basket)}
+              displayType="text"
+              thousandSeparator={true}
+              prefix={"₹"}
+            />
+
+            <button
+              onClick={confirmPayment}
+              disabled={!currentUser}
+              style={{ cursor: !currentUser ? "default" : "pointer" }}
+            >
+              {currentUser ? "Place Order" : "SignIn_Required"}
+            </button>
+          </Subtotal>
+        </Main>
+      </Container>
+    </>
   );
 }
 

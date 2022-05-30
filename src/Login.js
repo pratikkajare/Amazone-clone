@@ -59,8 +59,8 @@ const Login = () => {
       </Link>
       <div className="login__container">
         <form>
-          <h1>Sign-in </h1>
-
+          <h>Sign-in </h>
+          <br />
           <h5>E-mail</h5>
           <input type="text" ref={emailRef} />
           <h5>Password</h5>
@@ -73,11 +73,11 @@ const Login = () => {
             Sign In
           </button>
 
-          <p>
+          <small>
             By signing in You agree to Amazone fake clone conditions of Use &
             Sale. Please see our privacy notice, our coockies Notice and our
-            Interest-Based Ads Notice
-          </p>
+            Interest-Based on Ads Notice.
+          </small>
           <button
             className="login__registerButton"
             disabled={loading || currentUser != null}
@@ -85,7 +85,7 @@ const Login = () => {
           >
             Create Your Amazone Account
           </button>
-          <button className="login__registerButton" onClick={handlelogout}>
+          <button className="login__logoutButton" onClick={handlelogout}>
             logout
           </button>
         </form>

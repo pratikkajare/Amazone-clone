@@ -44,7 +44,7 @@ function Header() {
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
-        <Link to="/" className="link_underline">
+        <Link to="/orders" className="link_underline">
           <div className="header__option">
             <span className="header__optionlineone">Returns</span>
             <span className="header__optionlinetwo">& Orders</span>

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
+import styled from "styled-components";
 import "./App.css";
-import Header from "./Header";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 import Home from "./Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./Checkout";
@@ -11,10 +11,8 @@ import { useStateValue } from "./StateProvider";
 import Payment from "./Components/Payment";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import Order from "./Order";
-import Orders from "./Orders";
+import Orders from "./Components/Orders";
 import Address from "./Address";
-// import InjectCheckout from "./InjectCheckout";
 
 const promise = loadStripe(
   "pk_test_51KvMuZSE2Bi1ByoVo542v1cXi6Ggsahxs2ud45kypMXxe7tUPcIyBnK5YWRpP86aJ5LJgA7WiV1tayT2URKJ111i00mBpoSLRv"
@@ -39,9 +37,7 @@ function App() {
   }, []);
   return (
     <Router>
-      <div className="App">
-        <Header />
-
+      <Container>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Amazone-clone" element={<Home />} />
@@ -57,13 +53,21 @@ function App() {
           />
           <Route exact path="/address" element={<Address />} />
           <Route exact path="/orders" element={<Orders />} />
-          <Route exact path="/order" element={<Order />} />
         </Routes>
 
-        <Footer />
-      </div>
+        {/* <Footer /> */}
+      </Container>
     </Router>
   );
 }
+
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 export default App;

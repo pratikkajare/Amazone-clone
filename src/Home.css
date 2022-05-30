@@ -58,32 +58,6 @@
   object-fit: fill;
 }
 
-.prev,
-.next {
-  cursor: pointer;
-  z-index: 3;
-  position: absolute;
-  top: 20%;
-  width: auto;
-  padding: 1rem;
-
-  font-size: 40px;
-  font-weight: bold;
-  border-radius: 0px 5px 5px 0px;
-}
-
-.prev:hover,
-.next:hover {
-  color: white;
-
-  transition: all 0.2s ease-in;
-}
-
-.next {
-  right: 0;
-  border-radius: 5px 0px 0px 5px;
-}
-
 @media screen and (max-width: 675px) {
   .home__row {
     display: flex;
@@ -91,7 +65,7 @@
   }
 
   .slider-container {
-    height: 120px;
+    height: 110px;
   }
   .prev,
   .next {
