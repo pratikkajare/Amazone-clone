@@ -12,6 +12,9 @@ import { useNavigate } from "react-router-dom";
 function Payment() {
   const [{ address, basket, user }, dispatch] = useStateValue();
   const [clientSecret, setClientSecret] = useState("");
+  const [disabled, setDisabled] = useState(true);
+  const [error, setError] = useState(null);
+  const [processing, setProcessing] = useState("");
   const elements = useElements();
   const stripe = useStripe();
 
@@ -34,6 +37,8 @@ function Payment() {
   const confirmPayment = async (e) => {
     e.preventDefault();
 
+    setProcessing(true);
+
     await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
@@ -48,6 +53,7 @@ function Payment() {
           email: user.email,
           address: address,
         });
+        setProcessing(false);
         alert("Order Received");
 
         dispatch({
@@ -56,6 +62,10 @@ function Payment() {
         navigate("/orders");
       })
       .catch((err) => console.warn(err));
+  };
+  const handleChange = (event) => {
+    setDisabled(event.empty);
+    setError(event.error ? event.error.message : "");
   };
 
   return (
@@ -91,7 +101,7 @@ function Payment() {
 
                 {/* Card Element */}
 
-                <CardElement />
+                <CardElement onChange={handleChange} />
               </div>
             </PaymentContainer>
 
@@ -133,8 +143,14 @@ function Payment() {
 
             <button
               onClick={confirmPayment}
-              disabled={!currentUser}
-              style={{ cursor: !currentUser ? "default" : "pointer" }}
+              disabled={!currentUser || disabled || processing}
+              style={{
+                cursor: !currentUser
+                  ? "default"
+                  : disabled
+                  ? "default"
+                  : "pointer",
+              }}
             >
               {currentUser ? "Place Order" : "SignIn_Required"}
             </button>

@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 
 import { useEffect, useState } from "react";
-import { Firestore } from "@google-cloud/firestore";
 
 import {
   getAuth,

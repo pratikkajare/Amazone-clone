@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const Subtotal = () => {
   const history = useNavigate();
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
   return (
     <div className="subtotal">
       <CurrencyFormat
@@ -33,7 +33,7 @@ const Subtotal = () => {
         disabled={basket.length === 0}
         style={{ cursor: basket.length === 0 ? "default" : "pointer" }}
       >
-        {basket.length == 0 ? <p>Empty Cart</p> : "Proceed To Checkout"}
+        {basket.length === 0 ? <p>Empty Cart</p> : "Proceed To Checkout"}
       </button>
     </div>
   );
