@@ -3,14 +3,18 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "../Header";
 import { useStateValue } from "../StateProvider";
+import Spinner from "./Spinner/Spinner";
 
 function Orders() {
   const [{ user }] = useStateValue();
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    axios
-      .post("/orders/get", { email: user.email })
-      .then((res) => setOrders(res.data));
+    axios.post("/orders/get", { email: user.email }).then((res) => {
+      setOrders(res.data);
+      setLoading(false);
+    });
   }, []);
   console.log(orders);
 
@@ -21,7 +25,7 @@ function Orders() {
         <Main>
           <OrderContainer>
             <h2>Your Orders</h2>
-            {!user.email ? (
+            {orders == 0 ? (
               <h4>You Have Nothing To Show</h4>
             ) : (
               orders.map((order) => (
@@ -61,7 +65,8 @@ function Orders() {
                   </OrderBasket>
                 </OrderDetail>
               ))
-            )}
+            )}{" "}
+            {loading && <Spinner /> ? <Spinner /> : ""}
           </OrderContainer>
         </Main>
       </Container>
